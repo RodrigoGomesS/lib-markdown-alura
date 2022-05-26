@@ -9,7 +9,7 @@ function extrairLinks(texto) {
         arrayResultados.push({[temp[1]]: temp[2]})
     }
 
-    return arrayResultados;
+    return arrayResultados.length === 0 ? 'Não há links.' :  arrayResultados;
 }
 
 function tratamentoErro(erro) {
@@ -20,7 +20,7 @@ async function leitura(caminho) {
     try {
         const encoding = 'utf8';
         const texto = await fs.promises.readFile(caminho, encoding);
-        console.log(extrairLinks(texto));
+        return extrairLinks(texto);
     } catch (erro) {
         tratamentoErro(erro);
     } finally {
@@ -29,4 +29,4 @@ async function leitura(caminho) {
 
 }
 
-leitura('./arquivos/texto1.md');
+export {leitura};
