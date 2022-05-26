@@ -13,4 +13,4 @@ Curso introdutório ao Node.js
 
 ## link do curso: https://cursos.alura.com.br/course/nodejs-criando-biblioteca
 
-## Status: Em andamento.
+## Status: Concluído.
